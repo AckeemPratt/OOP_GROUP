@@ -32,7 +32,7 @@ public class Driver {
 	//write id and password to file method
 	public static void writePassword(Login cell) {
 		RandomAccessFile file = null;
-		String filename = "Password.tst";
+		String filename = "Password.txt";
 		try {
 			file = new RandomAccessFile(filename, "rw");
 
@@ -56,7 +56,7 @@ public class Driver {
 	
 	public static Login readPassword(int searchIndex) {
 		RandomAccessFile file = null;
-		String filename = "test.tst";
+		String filename = "Password.txt";
 		Login credential = new Login();
 		
 		try {
@@ -87,7 +87,7 @@ public class Driver {
 	//main
 	public static void main(String[] args) {
 		//initialize password file
-		initializePassword("Password.tst");
+		initializePassword("Password.txt");
 		
 		//write password for staff and student
 		writePassword(new Login(1000,"teacher"));
