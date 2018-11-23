@@ -2,12 +2,7 @@ import java.util.Scanner;
 
 public class Driver {
 	public static void main(String[] args) {
-		
-		System.out.print("Please enter username");
-		Scanner username=new Scanner(System.in);
-		
-		
-		//
+
 		
 		int choice=0;
 		Scanner input=new Scanner(System.in);
