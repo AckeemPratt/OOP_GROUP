@@ -26,7 +26,7 @@ public class CourseRec {
 		setCode(code);
 		setName(name);
 		setDescription(description);
-		setCredit(credit);                                                                                                                                                                                                                                                                                  );
+		setCredit(credit);                                                                                                                                                                                                                                                                                  
 		setStartDate(startDate);
 		setEndDate(endDate);
 	}
