@@ -1,27 +1,50 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner; // I use scanner because it's command line.
-
 public class Login {
-	public void run() {
-		Scanner scan = null;
-		try {
-			scan = new Scanner(new File("the\\dir\\myFile.extension"));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Scanner keyboard = new Scanner(System.in);
-		String user = scan.nextLine();
-		String pass = scan.nextLine(); // looks at selected file in scan
-
-		String inpUser = keyboard.nextLine();
-		String inpPass = keyboard.nextLine(); // gets input from user
-
-		if (inpUser.equals(user) && inpPass.equals(pass)) {
-			System.out.print("your login message");
-		} else {
-			System.out.print("your error message");
-		}
+	private int id;
+	private String password;
+	
+	//default
+	public Login() {
+		id = 0;
+		password = "password";
 	}
+	
+	//primary
+	public Login(int id, String password) {
+		this.id = id;
+		this.password = password;
+	}
+	
+	//copy
+	public Login(Login obj) {
+		id = obj.id;
+		password = obj.password;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
+	public long sizeof() {
+		return (4 + (20 * 2));
+	}
+
+	/*@Override
+	public String toString() {
+		return "Login [username=" + username + ", password=" + password + "]";
+	}*/
+	
+	
 }
