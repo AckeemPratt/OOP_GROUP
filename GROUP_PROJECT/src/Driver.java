@@ -32,7 +32,7 @@ public class Driver {
 	//write id and password to file method
 	public static void writePassword(Login cell) {
 		RandomAccessFile file = null;
-		String filename = "Password.txt";
+		String filename = "Password.tst";
 		try {
 			file = new RandomAccessFile(filename, "rw");
 
@@ -56,7 +56,7 @@ public class Driver {
 	
 	public static Login readPassword(int searchIndex) {
 		RandomAccessFile file = null;
-		String filename = "Password.txt";
+		String filename = "Password.tst";
 		Login credential = new Login();
 		
 		try {
@@ -87,7 +87,7 @@ public class Driver {
 	//main
 	public static void main(String[] args) {
 		//initialize password file
-		initializePassword("Password.txt");
+		initializePassword("Password.tst");
 		
 		//write password for staff and student
 		writePassword(new Login(1000,"teacher"));
@@ -103,40 +103,80 @@ public class Driver {
 		
 		if (userId == 1000 && userPassword.equals("teacher")) {
 			System.out.print("Teahcer logged in\n");
-		}
-		
-		if (userId == 2000 && userPassword == "student") {
-			System.out.print("Student logged in\n");
-		}
-		
-		
-		int choice=0;
-		Scanner input=new Scanner(System.in);
-		
-		do {
-			System.out.println("Please Select Option below ");
-			System.out.println("1. Take Test");
-			System.out.println("2. View test Result");
-			System.out.println("3. Exit");
 			
-			switch(input.nextInt()) {
-			case 1:
-				System.out.print("option 1 selected\n");
-				break;
-			case 2:
-				System.out.print("option 2 selected\n");
-				break;
-			case 3:
-				System.out.print("option 3 selected\n");
-				break;
-			default:
-				System.out.print("default option\n");
-				break;
+			int choice=0;
+			Scanner input=new Scanner(System.in);
+			
+			do {
+				System.out.println("Please Select Option below ");
+				System.out.println("1. View Test Result");
+				System.out.println("2. Set Test");
+				System.out.println("3. Exit");
 				
-			}
+				switch(input.nextInt()) {
+				case 1:
+					System.out.print("option 1 selected\n");
+					break;
+				case 2:
+					System.out.print("option 2 selected\n");
+					break;
+				case 3:
+					System.out.print("option 3 selected\n");
+					break;
+				default:
+					System.out.print("default option\n");
+					break;
+					
+				}
+				
+			}while(input.nextInt() !=3);
+			System.out.print("Teacher exited system\n");
+			//end of student menu
 			
-		}while(input.nextInt() !=3);
-		System.out.print("system exited\n");
+			
+			
+		}
+		
+		if (userId == 2000 && userPassword.equals("student")) {
+			System.out.print("Student logged in\n");
+			
+			
+			int choice=0;
+			Scanner input=new Scanner(System.in);
+			
+			do {
+				System.out.println("Please Select Option below ");
+				System.out.println("1. View Test Result");
+				System.out.println("2. Take Test");
+				System.out.println("3. Exit");
+				
+				switch(input.nextInt()) {
+				case 1:
+					System.out.print("option 1 selected\n");
+					break;
+				case 2:
+					System.out.print("option 2 selected\n");
+					break;
+				case 3:
+					System.out.print("option 3 selected\n");
+					break;
+				default:
+					System.out.print("default option\n");
+					break;
+					
+				}
+				
+			}while(input.nextInt() !=3);
+			System.out.print("Student exited system\n");
+			//end of student menu
+			
+			
+			
+			
+		}
+		
+		
+		
 	}
 	
 		}
