@@ -2,14 +2,14 @@ import java.util.*;
 
 public class Student {
 
-	public int idNumber;
-	public String firstName;
-	public String lastName;
-	public String address;
-	public Date dateEnrolled;
-	public String contactNumber;
-	public ProgrammeRec programme ;
-	public CourseRec course;
+	private int idNumber;
+	private String firstName;
+	private String lastName;
+	private String address;
+	private Date dateEnrolled;
+	private String contactNumber;
+	private ProgrammeRec programme ;
+	private CourseRec course;
 	
 	public Student() {
 		idNumber = 0;
