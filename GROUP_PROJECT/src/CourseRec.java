@@ -80,7 +80,10 @@ public class CourseRec {
 	}
 	
 	
-	
+	public String toString() {
+		String out;
+		
+	}
 	
 	
 	
