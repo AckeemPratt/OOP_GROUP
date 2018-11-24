@@ -89,6 +89,7 @@ public class CourseRec {
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
+<<<<<<< HEAD
 
 	public String toString() {
 		String out;
@@ -102,4 +103,18 @@ public class CourseRec {
 		return out;
 	}
 
+=======
+	
+	
+	public String toString() {
+		String out;
+		
+	}
+	
+	
+	
+	
+	
+	
+>>>>>>> branch 'master' of https://github.com/AckeemPratt/OOP_GROUP.git
 }
