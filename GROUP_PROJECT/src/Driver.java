@@ -102,7 +102,7 @@ public class Driver {
 		String userPassword = credentialScan.next();
 		
 		if (userId == 1000 && userPassword.equals("teacher")) {
-			System.out.print("Teahcer logged in\n");
+			System.out.print("Teacher logged in\n");
 			
 			int choice=0;
 			Scanner input=new Scanner(System.in);

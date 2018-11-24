@@ -20,6 +20,7 @@ public class Student {
 		contactNumber = "contact number";
 		programme = new ProgrammeRec();
 		course = new CourseRec();
+	}
 	
 	public Student(int idNumber, String firstName, String lastName, String address, Date dateEnrolled,
 		String contactNumber, ProgrammeRec programme, CourseRec course){
