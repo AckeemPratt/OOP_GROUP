@@ -164,35 +164,43 @@ public class Driver {
 				case 2:
 					System.out.print("Enroll in Programme selected\n\n");
 					
+					//take programme option which will then allow take test
 					Scanner inputProgramme = new Scanner(System.in);
 					int programmeChoice=0;
 					
 					
 					do {
-						System.out.print("Please select the Programmeto enroll in\n1. Associate Degree\n2. Diploma\n3. Certificate\n\n\n\n");
+						System.out.print("Please select the Programme to enroll in\n1. Associate Degree\n2. Diploma\n3. Certificate\n4. Exit\n\n\n\n");
 						programmeChoice = inputProgramme.nextInt();
 						
 						switch(programmeChoice) {
 						case 1:
-							System.out.print("Associate Degree Programme selected\n\n");
+							System.out.print("Associate Degree Programme selected\n");
 							System.out.print("Select test to take\n\n");
+							//put take test method here
+							
 							break;
 							
 						case 2:
-							System.out.print("Diploma Programme selected\n\n");
+							System.out.print("Diploma Programme selected\n");
 							System.out.print("Select test to take\n\n");
 							break;
 							
 						case 3:
-							System.out.print("Certificate selected\n\n");
+							System.out.print("Certificate selected\n");
 							System.out.print("Select test to take\n\n");
 							break;
 							
+						case 4:
+							System.out.print("Exit selected\n\n");
+							break;
+							
 						default:
-							System.out.print("Invalid selection");
+							System.out.print("Invalid selection\n\n");
 							break;
 						}
-					}while(programmeChoice <1 || programmeChoice >3);		
+					}while(programmeChoice !=4);
+					break;
 					
 				case 3:
 					System.out.print("Take Test selected\n\n");
