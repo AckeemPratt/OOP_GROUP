@@ -94,113 +94,123 @@ public class Driver {
 		writePassword(new Login(2000,"student"));
 		
 		Scanner credentialScan=new Scanner(System.in);
+		int loginSuccess = 0;
 		
-		System.out.print("Enter ID as username\n");
-		int userId = credentialScan.nextInt();
-		
-		System.out.print("Enter password\n");
-		String userPassword = credentialScan.next();
-		
-		if (userId == 1000 && userPassword.equals("teacher")) {
-			System.out.print("Teacher logged in\n");
-		
-		int choice;
-		Scanner input = new Scanner(System.in);
 		do {
-			System.out.println("Please Select Option below ");
-			System.out.println("1. View Test Result");
-			System.out.println("2. Set Test");
-			System.out.println("3. Exit\n");
-			choice=input.nextInt();
+			System.out.print("\nEnter ID as username\n");
+			int userId = credentialScan.nextInt();
 			
-			switch(choice) {
-			case 1:
-				System.out.print("View Test Result selected\n\n");
-				break;
-			case 2:
-				System.out.print("Set Test selected\n\n");
-				break;
-			case 3:
-				System.out.print("Exit selected\n\n");
-				break;
-			default:
-				System.out.print("Invalid Selection, try again\n\n");
-				break;			
-			}	
-		}while(choice!=3);
-		System.out.print("Teacher exited system\n");
-		
-		}//end of teachers bracket
-		
-		
-		//comes here with student login
-		if (userId == 2000 && userPassword.equals("student")) {
-			System.out.print("Student logged in\n");
-		
-		int choice;
-		Scanner input = new Scanner(System.in);
-		do {
-			System.out.println("Please Select Option below\n");
-			System.out.println("1. View Test Result");
-			System.out.println("2. Enroll in Programme");
-			System.out.println("3. Take Test");
-			System.out.println("4. Exit");
-			choice=input.nextInt();
+			System.out.print("Enter password\n");
+			String userPassword = credentialScan.next();
 			
-			switch(choice) {
-			case 1:
-				System.out.print("View Test Result selected\n\n");
-				break;
-			case 2:
-				System.out.print("Enroll in Programme selected\n\n");
-				
-				Scanner inputProgramme = new Scanner(System.in);
-				int programmeChoice=0;
-				
-				
-				do {
-					System.out.print("Please select the Programmeto enroll in\n1. Associate Degree\n2. Diploma\n3. Certificate\n\n\n\n");
-					programmeChoice = inputProgramme.nextInt();
-					
-					switch(programmeChoice) {
-					case 1:
-						System.out.print("Associate Degree Programme selected\n\n");
-						System.out.print("Select test to take\n\n");
-						break;
-						
-					case 2:
-						System.out.print("Diploma Programme selected\n\n");
-						System.out.print("Select test to take\n\n");
-						break;
-						
-					case 3:
-						System.out.print("Certificate selected\n\n");
-						System.out.print("Select test to take\n\n");
-						break;
-						
-					default:
-						System.out.print("Invalid selection");
-						break;
-					}
-				}while(programmeChoice <1 || programmeChoice >3);		
-				
-			case 3:
-				System.out.print("Take Test selected\n\n");
-				break;
-			case 4:
-				System.out.print("Exit selected\n\n");
-				break;
-			default:
-				System.out.print("Invalid Selection, try again\n\n");
-				break;
+			if ((userId == 2000 && userPassword.equals("student")) || (userId == 1000 && userPassword.equals("teacher"))) {
+				System.out.print("\nLogin successful\n");
+				loginSuccess = 1;
+			}else{
+					System.out.print("\nLogin failed, try again\n");
 			}
-		}while(choice!=4);
-		System.out.print("Student exited system");
+			
+			
+			if (userId == 1000 && userPassword.equals("teacher")) {
+				System.out.print("Teacher logged in\n\n");
+			
+			int choice;
+			Scanner input = new Scanner(System.in);
+			do {
+				System.out.println("Please Select Option below ");
+				System.out.println("1. View Test Result");
+				System.out.println("2. Set Test");
+				System.out.println("3. Exit\n");
+				choice=input.nextInt();
+				
+				switch(choice) {
+				case 1:
+					System.out.print("View Test Result selected\n\n");
+					break;
+				case 2:
+					System.out.print("Set Test selected\n\n");
+					break;
+				case 3:
+					System.out.print("Exit selected\n\n");
+					break;
+				default:
+					System.out.print("Invalid Selection, try again\n\n");
+					break;			
+				}	
+			}while(choice!=3);
+			System.out.print("Teacher exited system\n");
+			
+			}//end of teachers bracket
+			
+			
+			//comes here with student login
+			if (userId == 2000 && userPassword.equals("student")) {
+				System.out.print("Student logged in\n\n");
+			
+			int choice;
+			Scanner input = new Scanner(System.in);
+			do {
+				System.out.println("Please Select Option below\n");
+				System.out.println("1. View Test Result");
+				System.out.println("2. Enroll in Programme");
+				System.out.println("3. Take Test");
+				System.out.println("4. Exit");
+				choice=input.nextInt();
+				
+				switch(choice) {
+				case 1:
+					System.out.print("View Test Result selected\n\n");
+					break;
+				case 2:
+					System.out.print("Enroll in Programme selected\n\n");
+					
+					Scanner inputProgramme = new Scanner(System.in);
+					int programmeChoice=0;
+					
+					
+					do {
+						System.out.print("Please select the Programmeto enroll in\n1. Associate Degree\n2. Diploma\n3. Certificate\n\n\n\n");
+						programmeChoice = inputProgramme.nextInt();
+						
+						switch(programmeChoice) {
+						case 1:
+							System.out.print("Associate Degree Programme selected\n\n");
+							System.out.print("Select test to take\n\n");
+							break;
+							
+						case 2:
+							System.out.print("Diploma Programme selected\n\n");
+							System.out.print("Select test to take\n\n");
+							break;
+							
+						case 3:
+							System.out.print("Certificate selected\n\n");
+							System.out.print("Select test to take\n\n");
+							break;
+							
+						default:
+							System.out.print("Invalid selection");
+							break;
+						}
+					}while(programmeChoice <1 || programmeChoice >3);		
+					
+				case 3:
+					System.out.print("Take Test selected\n\n");
+					break;
+				case 4:
+					System.out.print("Exit selected\n\n");
+					break;
+				default:
+					System.out.print("Invalid Selection, try again\n\n");
+					break;
+				}
+			}while(choice!=4);
+			System.out.print("Student exited system");
+			
+	
+			}//end of student bracket
 		
-		
-		
-		
-		}//end of student bracket
+		}while(loginSuccess!=1);
 		
 		
 	}//end of main
