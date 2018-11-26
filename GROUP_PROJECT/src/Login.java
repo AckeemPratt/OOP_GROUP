@@ -40,7 +40,7 @@ public class Login {
 	public long sizeof() {
 		return (4 + (20 * 2));
 	}
-//
+//will not use override
 	/*@Override
 	public String toString() {
 		return "Login [username=" + username + ", password=" + password + "]";

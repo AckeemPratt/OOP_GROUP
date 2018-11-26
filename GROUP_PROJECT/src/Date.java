@@ -48,8 +48,8 @@
 
 		
 		public String toString() {
-			
 			String out;
+			
 			out = getDay() + "/";
 			out += getMonth() + "/";
 			out += getYear();

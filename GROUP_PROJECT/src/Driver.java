@@ -102,10 +102,7 @@ public class Driver {
 		String userPassword = credentialScan.next();
 		
 		if (userId == 1000 && userPassword.equals("teacher")) {
-<<<<<<< HEAD
 			System.out.print("Teacher logged in\n");
-=======
-			System.out.print("Teahcer logged in\n");
 		
 		int choice;
 		Scanner input = new Scanner(System.in);
@@ -115,7 +112,6 @@ public class Driver {
 			System.out.println("2. Set Test");
 			System.out.println("3. Exit\n");
 			choice=input.nextInt();
->>>>>>> branch 'master' of https://github.com/AckeemPratt/OOP_GROUP.git
 			
 			switch(choice) {
 			case 1:
@@ -137,6 +133,7 @@ public class Driver {
 		}//end of teachers bracket
 		
 		
+		//comes here with student login
 		if (userId == 2000 && userPassword.equals("student")) {
 			System.out.print("Student logged in\n");
 		
@@ -156,7 +153,37 @@ public class Driver {
 				break;
 			case 2:
 				System.out.print("Enroll in Programme selected\n\n");
-				break;
+				
+				Scanner inputProgramme = new Scanner(System.in);
+				int programmeChoice=0;
+				
+				
+				do {
+					System.out.print("Please select the Programmeto enroll in\n1. Associate Degree\n2. Diploma\n3. Certificate\n\n\n\n");
+					programmeChoice = inputProgramme.nextInt();
+					
+					switch(programmeChoice) {
+					case 1:
+						System.out.print("Associate Degree Programme selected\n\n");
+						System.out.print("Select test to take\n\n");
+						break;
+						
+					case 2:
+						System.out.print("Diploma Programme selected\n\n");
+						System.out.print("Select test to take\n\n");
+						break;
+						
+					case 3:
+						System.out.print("Certificate selected\n\n");
+						System.out.print("Select test to take\n\n");
+						break;
+						
+					default:
+						System.out.print("Invalid selection");
+						break;
+					}
+				}while(programmeChoice <1 || programmeChoice >3);		
+				
 			case 3:
 				System.out.print("Take Test selected\n\n");
 				break;
@@ -169,6 +196,9 @@ public class Driver {
 			}
 		}while(choice!=4);
 		System.out.print("Student exited system");
+		
+		
+		
 		
 		}//end of student bracket
 		
