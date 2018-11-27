@@ -60,7 +60,8 @@
 	            while ((!input.equals("register")) || (!input.equals("login"))) {
 	                System.out.println("invild option, chose login or regiser!");
 	                input = scanner.nextLine();
+	                System.out.println("testing");
 
-
-	        }//
+	        }//test
+	            
 	
