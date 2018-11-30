@@ -11,6 +11,10 @@ public class Student {
 	private ProgrammeRec programme ;
 	//private CourseRec course;
 	
+	public long sizeof() {
+		return (4 + (50 * 2) + (50 * 2) + (50 * 2) + 12 + (50*2) + (50*2));
+	}
+	
 	public Student() {
 		idNumber = 0;
 		firstName = "first name";

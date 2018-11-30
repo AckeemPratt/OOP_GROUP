@@ -7,12 +7,12 @@ public class StaffRec {
 	private String faculty;
 	private String department;
 	private Date dateEmployed;
-	private String password;
+	//private String password;
 	
 	
 	
 	public StaffRec(int idNumber, String firstName, String lastName, String faculty, String department,
-			Date dateEmployed, String password) {
+			Date dateEmployed/*, String password*/) {
 		super();
 		this.idNumber = idNumber;
 		this.firstName = firstName;
@@ -20,7 +20,7 @@ public class StaffRec {
 		this.faculty = faculty;
 		this.department = department;
 		this.dateEmployed = dateEmployed;
-		this.password = password;
+		//this.password = password;
 	}
 	
 	
@@ -61,19 +61,24 @@ public class StaffRec {
 	public void setDateEmployed(Date dateEmployed) {
 		this.dateEmployed = dateEmployed;
 	}
-	public String getPassword() {
+	/*public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-
-
+	}*/
+	
+	
+	
 	public String toString() {
-		return "StaffRec [idNumber=" + idNumber + ", firstName=" + firstName + ", lastName=" + lastName + ", faculty="
-				+ faculty + ", department=" + department + ", dateEmployed=" + dateEmployed + ", password=" + password
-				+ "]";
+		String out;
+		out=("ID number is " + getIdNumber() + "\n");
+		out+=("First Name is " + getFirstName() + "\n");
+		out+=("Last Name is " + getLastName() + "\n");
+		out+=("Faculty is " + getFaculty() + "\n");
+		out+=("Department is " + getDepartment() + "\n");
+		out+=("Date employed is " + getDateEmployed() + "\n\n");
+		return out;
 	}
 }
 	

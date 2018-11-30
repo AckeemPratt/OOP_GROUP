@@ -6,20 +6,27 @@ public class Question {
 	String answer;
 	
 	protected long sizeof() {
-		return (4+(50 * 2) + (50 * 2));
+		return (4+(250 * 2) + (1 * 2));
 	}
 
 	
 	public Question() {
+		setId(0);
 		setPrompt("default question");
 		setAnswer("a");
 	}
 	
 	
 	public Question(int id,String prompt, String answer) {
-		this.id = id;
-		this.prompt = prompt;
-		this.answer = answer;
+		setId(id);
+		setPrompt(prompt);
+		setAnswer(answer);
+	}
+	
+	public Question(Question question) {
+		setId(question.getId());
+		setPrompt(question.getPrompt());
+		setAnswer(question.getAnswer());
 	}
 
 	
@@ -50,13 +57,13 @@ public class Question {
 		this.answer = answer;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public String toString() {
+		String out;
+		out = "ID" + getId() + "\n";
+		out+="Prompt" + getPrompt();
+		out+="Answer" + getAnswer();
+		
+		return out;
+		
+	}	
 }
