@@ -9,7 +9,7 @@ public class Student {
 	private Date dateEnrolled;
 	private String contactNumber;
 	private ProgrammeRec programme ;
-	private CourseRec course;
+	//private CourseRec course;
 	
 	public Student() {
 		idNumber = 0;
@@ -19,11 +19,11 @@ public class Student {
 		dateEnrolled = new Date();
 		contactNumber = "contact number";
 		programme = new ProgrammeRec();
-		course = new CourseRec();
+		//course = new CourseRec();
 	}
 	
 	public Student(int idNumber, String firstName, String lastName, String address, Date dateEnrolled,
-		String contactNumber, ProgrammeRec programme, CourseRec course){
+		String contactNumber, ProgrammeRec programme/*, CourseRec course*/){
 		this.idNumber = idNumber;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -31,7 +31,7 @@ public class Student {
 		this.dateEnrolled = dateEnrolled;
 		this.contactNumber = contactNumber;
 		this.programme = programme;
-		this.course = course;
+		//this.course = course;
 	}
 		
 	public Student(Student stud){
@@ -42,7 +42,7 @@ public class Student {
 		dateEnrolled = stud.dateEnrolled;
 		contactNumber = stud.contactNumber;
 		programme = stud.programme;
-		course = stud.course;
+		//course = stud.course;
 	}
 	
 	public int getIdNumber() {
@@ -101,13 +101,13 @@ public class Student {
 		this.programme = programme;
 	}
 
-	public CourseRec getCourse() {
+	/*public CourseRec getCourse() {
 		return course;
 	}
 
 	public void setCourse(CourseRec course) {
 		this.course = course;
-	}
+	}*/
 	
 	
 	//display method
@@ -120,7 +120,7 @@ public class Student {
 		out+=("Date enrolled is " + getDateEnrolled() + "\n");
 		out+=("Contact Number is " + getContactNumber() + "\n");
 		out+=("Programme is " + getProgramme() + "\n");
-		out+=("Course is " + getCourse() + "\n");
+		//out+=("Course is " + getCourse() + "\n");
 		return out;
 	}
 		

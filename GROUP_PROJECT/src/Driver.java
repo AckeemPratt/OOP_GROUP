@@ -30,15 +30,15 @@ public class Driver {
 	}//end of initialize blank password file method
 	
 	//write id and password to file method
-	public static void writePassword(Login cell) {
+	public static void writePassword(Login credential) {
 		RandomAccessFile file = null;
 		String filename = "Password.tst";
 		try {
 			file = new RandomAccessFile(filename, "rw");
 
-			file.seek((cell.getId() - 1) * cell.sizeof());
-			file.writeInt(cell.getId());
-			file.writeUTF(cell.getPassword());
+			file.seek((credential.getId() - 1) * credential.sizeof());
+			file.writeInt(credential.getId());
+			file.writeUTF(credential.getPassword());
 			
 		} catch (IOException e) {
 			System.err.println(e);
@@ -120,6 +120,13 @@ public class Driver {
 				System.out.println("Please Select Option below ");
 				System.out.println("1. View Test Result");
 				System.out.println("2. Set Test");
+				
+				//initialize("test.dat");
+				
+				
+				
+				
+				
 				System.out.println("3. Exit\n");
 				choice=input.nextInt();
 				
@@ -145,14 +152,62 @@ public class Driver {
 			
 			//comes here with student login
 			if (userId == 2000 && userPassword.equals("student")) {
+				
+				Scanner inputRecord = new Scanner(System.in);
+				String firstName;
+				String lastName;
+				String address;
+				int day;
+				int month;
+				int year;
+				String contactNumber;
+				String programmeOption;
+				//CourseRec course = new CourseRec();
+				
 				System.out.print("Student logged in\n\n");
+					
+				
+				System.out.print("Enter first name\n");
+				firstName = inputRecord.nextLine();
+				
+				System.out.print("Enter last name\n");
+				lastName = inputRecord.nextLine();
+				
+				System.out.print("Enter address\n");
+				address = inputRecord.nextLine();
+				
+				System.out.print("Enter day enrolled\n");
+				day = inputRecord.nextInt();
+				
+				System.out.print("Enter month enrolled\n");
+				month = inputRecord.nextInt();
+				
+				System.out.print("Enter year enrolled\n");
+				year = inputRecord.nextInt();
+				
+				System.out.print("Enter contact\n");
+				contactNumber = inputRecord.nextLine();
+				contactNumber = inputRecord.nextLine();
+				
+				
+				System.out.print("You will now select a program\n");
+				System.out.print("Enter program\n");
+				programmeOption = inputRecord.nextLine();
+				
+
+				
+				//have another way to to get courses. just use Programme to make it easier
+				Date dateEnrolled = new Date(day, month, year);
+				ProgrammeRec programme = new ProgrammeRec(programmeOption);
+				Student stud1 = new Student(userId, firstName, lastName, address, dateEnrolled, contactNumber, programme);
+				System.out.print(stud1);
 			
 			int choice;
 			Scanner input = new Scanner(System.in);
 			do {
 				System.out.println("Please Select Option below\n");
 				System.out.println("1. View Test Result");
-				System.out.println("2. Enroll in Programme");
+				System.out.println("2. Enroll in Programme");//to take out
 				System.out.println("3. Take Test");
 				System.out.println("4. Exit");
 				choice=input.nextInt();
@@ -177,7 +232,8 @@ public class Driver {
 						case 1:
 							System.out.print("Associate Degree Programme selected\n");
 							System.out.print("Select test to take\n\n");
-							//put take test method here
+							
+							
 							
 							break;
 							
@@ -192,7 +248,7 @@ public class Driver {
 							break;
 							
 						case 4:
-							System.out.print("Exit selected\n\n");
+							System.out.print("Enrollment menu exited\n\n");
 							break;
 							
 						default:
@@ -204,9 +260,73 @@ public class Driver {
 					
 				case 3:
 					System.out.print("Take Test selected\n\n");
+					
+					if (programmeOption.equals("associate degree")) {
+						System.out.print("Associate Degree test options will be given\n");
+						
+						Scanner inputTest = new Scanner(System.in);
+						int testChoice=0;
+						
+						do {
+							System.out.print("1. first\n2. Second\n3. Third\n4. Fourth\n5. Fifth\n6. Sixth\n7. Seventh\n8. Eigth\n9. Exit\n\n");
+							
+							testChoice = inputTest.nextInt();
+							
+							switch(testChoice) {
+							case 1:
+								System.out.print("First test selected\n");
+								break;
+							case 2:
+								System.out.print("Second test selected\n");
+								break;
+							case 3:
+								System.out.print("Third test selected\n");
+								break;
+							case 4:
+								System.out.print("Fourth test selected\n");
+								break;
+							case 5:
+								System.out.print("Fifth test selected\n");
+								break;
+							case 6:
+								System.out.print("Sixth test selected\n");
+								break;
+							case 7:
+								System.out.print("Seventh test selected\n");
+								break;
+							case 8:
+								System.out.print("Eigth test selected\n");
+								break;
+							case 9:
+								System.out.print("Associate Degree tests menu exited\n");
+								break;
+							default:
+								System.out.print("Invalid menu option selected, please choose between 1-8\n");
+								break;
+							}
+						}while(testChoice!=9);
+						
+						
+						//put take test method here
+						
+						
+						
+						
+						
+						
+					}else if (programmeOption.equals("diploma")) {
+						System.out.print("Diploma test options will be given\n");
+					}else if (programmeOption.equals("certificate")) {
+						System.out.print("Certificate test options will be given\n");
+					}else {
+						System.out.print("You have an error accessing appropriate test. please restart program. Check program spelling next time\n");// use case for programme selection
+					}
+					
+					
+					
 					break;
 				case 4:
-					System.out.print("Exit selected\n\n");
+					System.out.print("Main menu exited\n\n");
 					break;
 				default:
 					System.out.print("Invalid Selection, try again\n\n");
